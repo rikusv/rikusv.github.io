@@ -4,15 +4,16 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I get a kick out of solving problems and figuring things out. Most of my time is spent on application architecture and development, teaching, and in general playing with code, mathematics and machine learning.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+## Current playgrounds
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+- Angular, SAPUI5 / OpenUI5
+- Node.js, Firebase, Cloud Firestore, SAP HANA, SAP Business Suite
+- Python, TensorFlow
 
+## Mostly just for fun
 
-[jekyll-organization]: https://github.com/jekyll
+- [Word Finder](http://rikusv-sandpit.appspot.com/words){:target="_blank"} using Python on Google App Engine.
+- [Sudoku Solver](http://rikusv-sandpit.appspot.com/sudoku){:target="_blank"} using Python on Google App Engine.
+- [Preliminary Mathematics of Biological Invasions]({{ site.baseurl }}{% post_url 2014-12-31-preliminary-mathematics-of-biological-invasions %}) - a discussion of some introductory models of biological invasion for those primarily interested in the mathematics.
