@@ -1,0 +1,67 @@
+@import "../assets/bootstrap/scss/functions";
+@import "../assets/bootstrap/scss/variables";
+@import "../assets/bootstrap/scss/mixins";
+@import "minima/syntax-highlighting";
+
+$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+.fill-height {
+  min-height: calc(100vh - 2 * #{$navbar-brand-padding-y} - 2 * #{$navbar-padding-y} - #{$navbar-brand-height});
+}
+
+
+// From minima
+// .svg-icon {
+    // width: 16px;
+    // height: 16px;
+//     display: inline-block;
+//     padding-right: 5px;
+//     vertical-align: text-top;
+// }
+
+.post-title {
+  @extend .display-4;
+}
+
+.post-list {
+  @extend .list-unstyled;
+  li {
+    @extend .mt-4;
+  }
+}
+
+.post-meta {
+  @extend .text-muted;
+}
+
+.social-icon {
+  @extend .list-inline-item;
+  @extend .mr-3;
+  @extend .align-middle;
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: $secondary;
+  }
+}
+
+// Add bootstrap classes
+
+table {
+  @extend .table;
+}
+
+
+
+
+pre {
+  padding: 1rem;
+}
+
+@import "../assets/bootstrap/scss/bootstrap";
+
+body {
+  font-family: Roboto, "Helvetica Neue";
+}
+
+@import "print";

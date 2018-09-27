@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  {%- include head.html -%}
+{%- include head.html -%}
 
-  <body>
+<body>
+  {%- include header.html -%}
 
-    {%- include header.html -%}
+  <div class="d-flex align-items-start flex-column fill-height">
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+    <div class="container my-3">
 
-    {%- include footer.html -%}
+      {{ content }}
 
-  </body>
+    </div>
+
+    <div class="container-fluid bg-light mt-auto d-print-none">
+
+      {%- include footer.html -%}
+
+    </div>
+
+  </div>
+
+
+  {%- include js.html -%}
+
+</body>
 
 </html>

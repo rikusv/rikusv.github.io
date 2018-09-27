@@ -1,0 +1,19 @@
+@media print {
+
+  .blockquote {
+    border: none;
+  }
+
+  .badge {
+    border: none;
+  }
+
+  .print-together {
+    page-break-inside: avoid;
+  }
+
+  .print-with-next {
+    page-break-after: avoid;
+  }
+
+}

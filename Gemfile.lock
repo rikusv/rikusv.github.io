@@ -245,7 +245,6 @@ DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.9)
   jekyll-seo-tag (~> 2.1)
-  minima (~> 2.0)
   tzinfo-data
 
 BUNDLED WITH

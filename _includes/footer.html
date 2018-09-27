@@ -1,29 +1,30 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+<footer class="footer">
 
-  <div class="wrapper">
+    <div class="row justify-content-between my-3">
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {{ site.title | escape }}
-          </li>
-          {%- if site.email -%}
-          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          {%- endif -%}
-        </ul>
+      <div class="col-sm-6">
+        <p class="text-muted">{{- site.description | escape -}}</p>
       </div>
 
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
+      <div class="col col-auto row">
+
+        <div class="col col-auto">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              {{ site.title | escape }}
+            </li>
+            {%- if site.email -%}
+            <li class="list-inline-item"><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
+          </ul>
+        </div>
+
+        <div class="col">
+          {%- include social.html -%}
+        </div>
+        
       </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
     </div>
-
-  </div>
 
 </footer>
