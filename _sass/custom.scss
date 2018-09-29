@@ -9,16 +9,6 @@ $font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Col
   min-height: calc(100vh - 2 * #{$navbar-brand-padding-y} - 2 * #{$navbar-padding-y} - #{$navbar-brand-height});
 }
 
-
-// From minima
-// .svg-icon {
-    // width: 16px;
-    // height: 16px;
-//     display: inline-block;
-//     padding-right: 5px;
-//     vertical-align: text-top;
-// }
-
 .post-title {
   @extend .display-4;
 }
@@ -51,8 +41,11 @@ table {
   @extend .table;
 }
 
-
-
+img {
+  @extend .img-fluid;
+  @extend .mx-auto;
+  @extend .d-block;
+}
 
 pre {
   padding: 1rem;
