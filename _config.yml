@@ -24,6 +24,7 @@ twitter_username: rikusv
 github_username:  rikusv
 
 # Build settings
+ignore: [node_modules]
 markdown: kramdown
 # theme: minima
 

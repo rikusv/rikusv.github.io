@@ -1,0 +1,5 @@
+---
+# Create json from posts 
+---
+
+{{ site.posts | json | jsonify }}
