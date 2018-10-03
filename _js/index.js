@@ -58,6 +58,12 @@ function search(input) {
   });
 }
 
+function onClearSearch() {
+  // TODO: at some stage maybe decide whether to use $ or querySelector...tsk.
+  $('#searchResults').collapse('hide');
+  $('#search').val('');
+}
+
 function onSearch() {
   const input = document.querySelector('#search').value;
   search(input);
@@ -86,3 +92,5 @@ const postCategoriesContainer = document.querySelector('#postCategories');
 if (postCategoriesContainer) {
   postCategoriesContainer.addEventListener('click', onCategorySearch);
 }
+
+document.querySelector('#clearSearch').addEventListener('click', onClearSearch);
