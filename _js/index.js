@@ -53,7 +53,9 @@ function onSearch() {
 
 function onCategorySearch(event) {
   const category = event.target.innerText
-  search(`cat:${category}`);
+  const searchValue = `cat:${category}`;
+  document.querySelector('#search').value = searchValue;
+  search(searchValue);
   window.scroll({
     'behavior': 'smooth',
     'left': 0,
