@@ -28,8 +28,20 @@ function indexContent(posts) {
 }
 
 function search(input) {
+  let loading = true;
+  setTimeout(() => {
+    if (loading) {
+      document.querySelector('#searchLoading').innerHTML = `
+        <div class="progress">
+          <div style="width: 100%" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+        </div>
+      `;
+    }
+  }, 500);
   const promise = searchApi.search(input)
   promise.then(results => {
+    loading = false;
+    document.querySelector('#searchLoading').innerHTML = '';
     $('#searchResultsList').empty();
     if (!input) {
       $('#searchResults').collapse('hide');
@@ -52,15 +64,18 @@ function onSearch() {
 }
 
 function onCategorySearch(event) {
-  const category = event.target.innerText
-  const searchValue = `cat:${category}`;
-  document.querySelector('#search').value = searchValue;
-  search(searchValue);
-  window.scroll({
-    'behavior': 'smooth',
-    'left': 0,
-    'top': 0
-  });
+  if (event.target.classList.contains('badge')) {
+    event.stopPropagation();
+    const category = event.target.innerText
+    const searchValue = `cat:${category}`;
+    document.querySelector('#search').value = searchValue;
+    search(searchValue);
+    window.scroll({
+      'behavior': 'smooth',
+      'left': 0,
+      'top': 0
+    });
+  }
 }
 
 readJSON()
