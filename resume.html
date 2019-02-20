@@ -105,14 +105,25 @@ function processRaw(source) {
   } else {
     const object = {};
     Object.keys(source).forEach(key => {
-      if (source[key].stringValue) {
-        object[key] = source[key].stringValue;
-      } else if (source[key].integerValue) {
-        object[key] = source[key].integerValue;
+      let value = source[key];
+      if (value.stringValue) {
+        object[key] = value.stringValue;
+      } else if (value.integerValue) {
+        object[key] = value.integerValue;
       } else if (source[key].timestampValue) {
         object[key] = new Date(source[key].timestampValue);
-      } else if (source[key].arrayValue) {
-        object[key] = processRaw(source[key].arrayValue.values);
+      } else if (
+        value.mapValue &&
+        value.mapValue.fields.seconds &&
+        value.mapValue.fields.nanoseconds
+        ) {
+          let fields = value.mapValue.fields;
+        object[key] = new Date(
+          Number(fields.seconds.integerValue) * 1000 +
+          Number(fields.nanoseconds.integerValue)
+        );
+      } else if (value.arrayValue) {
+        object[key] = processRaw(value.arrayValue.values);
       }
     });
     return object;
