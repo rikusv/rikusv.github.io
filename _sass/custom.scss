@@ -47,8 +47,15 @@ img {
   @extend .d-block;
 }
 
+
 pre {
   padding: 1rem;
+}
+
+blockquote {
+  border-left: .25em solid $border-color;
+  color: $text-muted;
+  padding: 0 1em;
 }
 
 @import "../assets/bootstrap/scss/bootstrap";
