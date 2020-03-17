@@ -24,6 +24,18 @@ const months = {
   11: "December",
 };
 
+const queryParameters = {}
+location.search.slice(1).split('&').forEach(part => {
+  const [key, value] = part.split('='); queryParameters[key] = value;
+});
+
+window.addEventListener('DOMContentLoaded', event => {
+  if (queryParameters.key) {
+    document.getElementById('form').hidden = true;
+    fetchResumeByKey(queryParameters.key)
+  };
+});
+
 const xhttp = new XMLHttpRequest();
 
 xhttp.onreadystatechange = function() {
@@ -85,11 +97,15 @@ function fetchResume() {
   if (!key) {
     writeError('Please enter a code.');
   } else {
-    setProgress(10);
-    const uri = `${baseUri}${key}`
-    xhttp.open('GET', uri, true);
-    xhttp.send();
+    fetchResumeByKey(key)
   }
+}
+
+function fetchResumeByKey(key) {
+  setProgress(10);
+  const uri = `${baseUri}${key}`
+  xhttp.open('GET', uri, true);
+  xhttp.send();
 }
 
 function processRaw(source) {
@@ -305,7 +321,7 @@ function getDayMonthYear(date) {
 
 </script>
 
-<form class="container d-print-none my-3" onsubmit="fetchResume(); return false;">
+<form id="form" class="container d-print-none my-3" onsubmit="fetchResume(); return false;">
   <div class="input-group mb-3">
     <input id="key" type="text" class="form-control" placeholder="Enter code">
     <div class="input-group-append">
