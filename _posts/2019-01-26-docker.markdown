@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "Docker"
+categories: [code, notes]
+---
+
+Find and download container images:
+
+```bash
+docker search something # Search for images on Docker Hub
+docker pull some-image # Download image
+docker pull some-image:1.0.0 # Download particular version of image
+docker rmi some-image # Remove image
+```
+
+Create and remove containers:
+
+> Container images are downloaded automatically if not already done.
+
+```bash
+docker run some-image # Create and start container from image, and attaches to stdout
+docker run -d some-image # Create and start container in detached mode
+docker run --name some-container some-image # Create and start container and name it
+docker rm some-container # Delete container
+```
+
+Start and stop containers:
+
+```bash
+docker start some-container
+docker stop some-container
+```
+
+Inspect running containers:
+
+```bash
+{% raw %}
+docker ps # List running containers
+docker ps -a # List all containers
+docker inspect some-container # Output detailed information
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' some-container # Extract information from detailed information using Go template
+{% endraw %}
+```
+
+Communicate with container process:
+
+```bash
+{% raw %}
+IP=$(sudo docker inspect some-container --format '{{ .NetworkSettings.IPAddress }}') # Assign container IP address to variable
+curl $IP # Get response
+{% endraw %}
+```
