@@ -203,7 +203,7 @@ function writeResume() {
       <p class="lead">
         An overview of where I can add value
       </p>
-      ${resume.skillsets.reverse().map(entry => `
+      ${resume.skillsets.map(entry => `
       <div class="my-5 print-together">
         <h4>
           ${entry.title}
