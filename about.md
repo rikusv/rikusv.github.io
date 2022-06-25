@@ -4,10 +4,4 @@ title: About
 permalink: /about/
 ---
 
-I get a kick out of solving problems and figuring things out. Most of my time is spent on application architecture and development, teaching, and in general playing with code, mathematics and machine learning.
-
-## Current playgrounds
-
-- Angular, SAPUI5 / OpenUI5
-- Node.js, Firebase, Cloud Firestore, SAP HANA, SAP Business Suite
-- Python, TensorFlow
+This is not a serious website. Maybe one day I'll have one, either here or at [rikusv.dev](https://rikusv.dev).
